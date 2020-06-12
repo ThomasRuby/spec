@@ -13,4 +13,4 @@ val check_unop : Ast.unop -> Source.region -> unit
 
 val type_cvtop : Source.region -> Ast.cvtop -> Types.value_type * Types.value_type
 
-
+val check_table_type : Types.table_type -> Source.region -> unit

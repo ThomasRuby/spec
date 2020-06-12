@@ -19,3 +19,6 @@ val func_elem : module_inst -> int32 Source.phrase -> Table.index -> Source.regi
 
 val type_ : module_inst -> int32 Source.phrase -> Types.func_type
 val block_type : module_inst -> Ast.block_type -> Types.func_type
+
+val global : module_inst -> int32 Source.phrase -> Global.global
+val memory : module_inst -> int32 Source.phrase -> Memory.memory
