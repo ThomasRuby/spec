@@ -355,6 +355,7 @@ let of_wrapper mods x_opt name wrap_action wrap_assertion at =
 
 let of_action mods act =
   match act.it with
+  | Graph _ -> assert false
   | Invoke (x_opt, name, lits) ->
     "call(" ^ of_var_opt mods x_opt ^ ", " ^ of_name name ^ ", " ^
       "[" ^ String.concat ", " (List.map of_literal lits) ^ "])",

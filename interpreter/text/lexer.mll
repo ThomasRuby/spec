@@ -350,6 +350,7 @@ rule token = parse
   | "script" { SCRIPT }
   | "register" { REGISTER }
   | "invoke" { INVOKE }
+  | "graph" { GRAPH }
   | "get" { GET }
   | "assert_malformed" { ASSERT_MALFORMED }
   | "assert_invalid" { ASSERT_INVALID }

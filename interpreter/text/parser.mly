@@ -174,7 +174,7 @@ let inline_type_explicit (c : context) x ft at =
 %token FUNC START TYPE PARAM RESULT LOCAL GLOBAL
 %token TABLE ELEM MEMORY DATA OFFSET IMPORT EXPORT TABLE
 %token MODULE BIN QUOTE
-%token SCRIPT REGISTER INVOKE GET
+%token SCRIPT REGISTER INVOKE GRAPH GET
 %token ASSERT_MALFORMED ASSERT_INVALID ASSERT_SOFT_INVALID ASSERT_UNLINKABLE
 %token ASSERT_RETURN ASSERT_TRAP ASSERT_EXHAUSTION
 %token NAN
@@ -852,6 +852,8 @@ script_module :
 action :
   | LPAR INVOKE module_var_opt name const_list RPAR
     { Invoke ($3, $4, $5) @@ at () }
+  | LPAR GRAPH module_var_opt name const_list RPAR
+    { Graph ($3, $4, $5) @@ at () }
   | LPAR GET module_var_opt name RPAR
     { Get ($3, $4) @@ at() }
 
