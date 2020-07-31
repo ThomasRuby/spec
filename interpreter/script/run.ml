@@ -321,6 +321,7 @@ let rec run_definition def : Ast.module_ =
 
 let run_action act : Values.value list =
   match act.it with
+  | Graph _ -> assert false
   | Invoke (x_opt, name, vs) ->
     trace ("Invoking function \"" ^ Ast.string_of_name name ^ "\"...");
     let inst = lookup_instance x_opt act.at in
